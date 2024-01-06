@@ -37,3 +37,29 @@
     transform: rotate(360deg);
   }
 }
+
+.heading-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 139px;
+  height: 69px;
+  background-color: #61dafb;
+border-radius: 19px;
+}
+
+.timer-icon{
+  height: 49px;
+  width: 49px;
+  margin-right: 9px;
+  border-radius: 50%;
+}
+
+.timer-txt{
+  font-size: 31px;
+}
