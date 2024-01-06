@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Timer from './Views/Timer';
 import QuizContainer from './Views/Quiz-rendering';
+import ResultContainer from './Views/ResultPage';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
       .then(res => res.json())
       .then(res => {
 
-        res.results.map((element) => {
+        res.results.forEach((element) => {
         var randomNumber = Math.floor(Math.random() * 3);
 
           element.options = [...element.incorrect_answers];
@@ -41,23 +42,8 @@ function App() {
     if (userOption == quiz[currentIndexOfQuiz].correct_answer) {
       setCorrectQue(correctQue + 1)
     }
-    console.log(userOption , quiz[currentIndexOfQuiz].correct_answer)
     setCurrentIndexOfQuiz(currentIndexOfQuiz + 1)
     setIsChecked('')
-  }
-
-  if (quizResultPage) {
-    return <div className='App'>
-      <header className='App-header'>
-        <div className={quiz.length - correctQue <= correctQue?'hi-score-div':'low-score-div'}>
-          <h1><span id="score-per">{correctQue * 10}</span>%</h1>
-        </div>
-        <br>
-        </br>
-        <br></br>
-        <div className='queCorWro'><p>{correctQue} Correct answer</p><p>{quiz.length - correctQue} Wrong answer</p></div>
-      </header>
-    </div>
   }
 
   if (!quiz.length) {
@@ -66,10 +52,13 @@ function App() {
     </div>
   }
 
-  return (
+  if(quizResultPage){
+    return <ResultContainer quiz={quiz} correctQue={correctQue} />
+  }
 
+  return (
+    
     <div className="App">
-      
         <div className="container">
           <h2 style={{textAlign:'center', fontSize:'49px',color:'white'}}>General knowledge quiz</h2>
           <div className="heading-div">

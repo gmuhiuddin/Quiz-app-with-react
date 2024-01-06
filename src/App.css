@@ -91,3 +91,7 @@
   font-size: 25px;
   cursor: pointer;
 }
+
+.btn:disabled{
+  cursor:not-allowed;
+}

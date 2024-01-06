@@ -10,6 +10,10 @@ function Timer(){
             setSecond(second-1)
         }, 1000);
 
+        if(second == 0){
+            clearInterval(interval);
+        };
+
         return () => clearInterval(interval);
     })
  

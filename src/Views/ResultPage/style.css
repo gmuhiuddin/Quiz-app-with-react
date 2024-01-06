@@ -1,0 +1,12 @@
+.result-container{
+    height: 100vh;
+    width: 100%;
+    background-color: aqua;
+}
+
+.hi-score-div, .low-score-div{
+    height: 129px;
+    width: 129px;
+    border-radius: 50%;
+    border: 3px solid black;
+}
