@@ -41,47 +41,53 @@
   }
 }
 
-.container{
+.container {
   padding: 15px;
   background-color: rgb(48, 48, 243);
   border-radius: 15px;
   width: 39%;
 }
 
-.heading-div{
+.heading-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.queNoP, .que-txt, .label{
+.queNoP,
+.que-txt,
+.label {
   font-size: 29px;
-color: white;
+  color: white;
 }
 
-.input{
+.input {
   height: 17px;
   width: 17px;
 
 }
 
-.label{
+.label {
   margin-left: 5px;
   cursor: pointer;
 }
 
-.btn-container{
-display: flex;
-justify-content: right;
+.queNoP {
+  margin-left: 5px;
 }
 
-.btn{
-margin-right: 19px;
-height: 39px;
-width: 109px;
-border-radius: 15px;
-border: none;
-outline: none;
-font-size: 21px;
-cursor: pointer;
+.btn-container {
+  display: flex;
+  justify-content: right;
+}
+
+.btn {
+  margin-right: 19px;
+  height: 45px;
+  width: 119px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  cursor: pointer;
 }

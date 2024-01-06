@@ -2,19 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 119px;
+    width: 139px;
     height: 55px;
      background-color: white;
     border-radius: 19px;
 }
 
 .timer-icon {
-    height: 43px;
-    width: 43px;
+    height: 45px;
+    width: 45px;
     margin-right: 9px;
     border-radius: 50%;
 }
 
 .timer-txt {
-    font-size: 25px;
+    font-size: 27px;
 }

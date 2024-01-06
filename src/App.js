@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Timer from './Components/Timer';
+import Timer from './Views/Timer';
+import QuizContainer from './Views/Quiz-rendering';
 
 function App() {
 
   const [quiz, setQuiz] = useState([])
-  const [isClicked, setISClicked] = useState(true)
+  const [isClicked, setIsClicked] = useState(true)
   const [quizResultPage, setQuizResultPage] = useState(false)
   const [currentIndexOfQuiz, setCurrentIndexOfQuiz] = useState(0)
   const [userOption, setUserOption] = useState('')
@@ -20,11 +21,13 @@ function App() {
     fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple')
       .then(res => res.json())
       .then(res => {
-        var randomNumber = Math.floor(Math.random() * 3);
 
         res.results.map((element) => {
-          element.options = [...element.incorrect_answers]
-          element.options.splice(randomNumber, 0, element.correct_answer)
+        var randomNumber = Math.floor(Math.random() * 3);
+
+          element.options = [...element.incorrect_answers];
+
+          element.options.splice(randomNumber, 0, element.correct_answer);
         })
 
         setQuiz(res.results)
@@ -34,7 +37,7 @@ function App() {
   }
 
   function nextQuizFunc() {
-    setISClicked(true)
+    setIsClicked(true)
     if (userOption == quiz[currentIndexOfQuiz].correct_answer) {
       setCorrectQue(correctQue + 1)
     }
@@ -74,32 +77,7 @@ function App() {
             <Timer />
           </div>
           <hr />
-          <div id="quiz-caintainer">
-            <span className='que-txt'>Q) {quiz[currentIndexOfQuiz]?.question}</span>
-            <br />
-            <br />
-            {quiz[currentIndexOfQuiz]?.options.map((element) => {
-              return <span className='options'>
-                <input className='input' checked={isChecked} onChange={(e) => {
-                  setIsChecked()
-                  setISClicked(false)
-                  setUserOption(e.target.value)
-                }} name='option' type='radio' id={element} value={element}/>
-                <label className='label' for={element}>{element}</label>
-                <br />
-                <br />
-              </span>
-            })}
-            <br />
-            <div className='btn-container'>
-            <button className='btn' disabled={isClicked} onClick={() => {
-              currentIndexOfQuiz + 1 != quiz.length ?
-                nextQuizFunc() :
-                setQuizResultPage(!quizResultPage)
-            }} >{currentIndexOfQuiz + 1 == quiz.length ? 'Submit' : 'Next'}</button>
-            </div>
-            <br />
-          </div>
+          <QuizContainer isClicked={isClicked} setQuizResultPage={setQuizResultPage} setUserOption={setUserOption} nextQuizFunc={nextQuizFunc} setIsClicked={setIsClicked} isChecked={isChecked} setIsChecked={setIsChecked} quiz={quiz} currentIndexOfQuiz={currentIndexOfQuiz} quizResultPage={quizResultPage} />
         </div>
 
     </div>
