@@ -3,16 +3,17 @@ import './App.css';
 import Timer from './Views/Timer';
 import QuizContainer from './Views/Quiz-rendering';
 import ResultContainer from './Views/ResultPage';
+import Loader from './Views/Loader'
 
 function App() {
 
-  const [quiz, setQuiz] = useState([])
-  const [isClicked, setIsClicked] = useState(true)
-  const [quizResultPage, setQuizResultPage] = useState(false)
-  const [currentIndexOfQuiz, setCurrentIndexOfQuiz] = useState(0)
-  const [userOption, setUserOption] = useState('')
-  const [correctQue, setCorrectQue] = useState(0)
-  const [isChecked,setIsChecked] = useState('')
+  const [currentIndexOfQuiz, setCurrentIndexOfQuiz] = useState(0);
+  const [quizResultPage, setQuizResultPage] = useState(false);
+  const [isClicked, setIsClicked] = useState(true);
+  const [userOption, setUserOption] = useState('');
+  const [correctQue, setCorrectQue] = useState(0);
+  const [isChecked,setIsChecked] = useState('');
+  const [quiz, setQuiz] = useState([]);
 
   useEffect(function () {
     getQuestions()
@@ -47,9 +48,7 @@ function App() {
   }
 
   if (!quiz.length) {
-    return <div className='loader-div'>
-      <div class="loader"></div>
-    </div>
+    return <Loader />
   }
 
   if(quizResultPage){
