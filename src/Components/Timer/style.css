@@ -1,0 +1,20 @@
+.timer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 119px;
+    height: 55px;
+     background-color: white;
+    border-radius: 19px;
+}
+
+.timer-icon {
+    height: 43px;
+    width: 43px;
+    margin-right: 9px;
+    border-radius: 50%;
+}
+
+.timer-txt {
+    font-size: 25px;
+}

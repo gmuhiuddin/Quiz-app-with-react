@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -38,28 +41,47 @@
   }
 }
 
+.container{
+  padding: 15px;
+  background-color: rgb(48, 48, 243);
+  border-radius: 15px;
+  width: 39%;
+}
+
 .heading-div{
   display: flex;
   justify-content: space-between;
-}
-
-.timer-div{
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 139px;
-  height: 69px;
-  background-color: #61dafb;
-border-radius: 19px;
 }
 
-.timer-icon{
-  height: 49px;
-  width: 49px;
-  margin-right: 9px;
-  border-radius: 50%;
+.queNoP, .que-txt, .label{
+  font-size: 29px;
+color: white;
 }
 
-.timer-txt{
-  font-size: 31px;
+.input{
+  height: 17px;
+  width: 17px;
+
+}
+
+.label{
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.btn-container{
+display: flex;
+justify-content: right;
+}
+
+.btn{
+margin-right: 19px;
+height: 39px;
+width: 109px;
+border-radius: 15px;
+border: none;
+outline: none;
+font-size: 21px;
+cursor: pointer;
 }

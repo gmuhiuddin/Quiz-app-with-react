@@ -66,36 +66,42 @@ function App() {
   return (
 
     <div className="App">
-      <header className="App-header">
+      
         <div className="container">
-          <h2>General knowledge quiz</h2>
+          <h2 style={{textAlign:'center', fontSize:'49px',color:'white'}}>General knowledge quiz</h2>
           <div className="heading-div">
             <p className='queNoP'><span>{currentIndexOfQuiz + 1}</span> of <span>{quiz.length}</span></p>
             <Timer />
           </div>
           <hr />
           <div id="quiz-caintainer">
-            <span className='que-txt'>{quiz[currentIndexOfQuiz]?.question}</span>
+            <span className='que-txt'>Q) {quiz[currentIndexOfQuiz]?.question}</span>
+            <br />
+            <br />
             {quiz[currentIndexOfQuiz]?.options.map((element) => {
               return <span className='options'>
-                <input checked={isChecked} onChange={(e) => {
+                <input className='input' checked={isChecked} onChange={(e) => {
                   setIsChecked()
                   setISClicked(false)
                   setUserOption(e.target.value)
                 }} name='option' type='radio' id={element} value={element}/>
-                <label for={element}>{element}</label>
-                <br></br>
+                <label className='label' for={element}>{element}</label>
+                <br />
+                <br />
               </span>
             })}
+            <br />
+            <div className='btn-container'>
             <button className='btn' disabled={isClicked} onClick={() => {
               currentIndexOfQuiz + 1 != quiz.length ?
                 nextQuizFunc() :
                 setQuizResultPage(!quizResultPage)
             }} >{currentIndexOfQuiz + 1 == quiz.length ? 'Submit' : 'Next'}</button>
+            </div>
+            <br />
           </div>
         </div>
 
-      </header>
     </div>
 
   );
