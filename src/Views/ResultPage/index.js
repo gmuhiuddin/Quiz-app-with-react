@@ -3,6 +3,14 @@ import './style.css';
 function ResultPage({correctQue, quiz}){
 return(
 <div className='result-container'>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
         <div className={quiz.length - correctQue <= correctQue?'hi-score-div':'low-score-div'}>
           <h1><span id="score-per">{correctQue * 10}</span>%</h1>
         </div>

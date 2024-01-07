@@ -1,12 +1,33 @@
-.result-container{
+.result-container {
     height: 100vh;
     width: 100%;
-    background-color: aqua;
 }
 
-.hi-score-div, .low-score-div{
-    height: 129px;
-    width: 129px;
+.hi-score-div,
+.low-score-div {
+    height: 259px;
+    width: 259px;
     border-radius: 50%;
-    border: 3px solid black;
+    border: 7.5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 31px;
+}
+
+.hi-score-div {
+    border-color: rgb(45, 221, 45);
+}
+
+.low-score-div {
+    border-color: rgb(225, 39, 39);
+}
+
+.queCorWro {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 31px;
 }
