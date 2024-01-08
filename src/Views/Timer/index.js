@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import timerImg from '../../output-onlinepngtools.png'
 import './style.css'
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 function Timer([setQuizResultPage]){
     const [second, setSecond] = useState(300);
@@ -13,7 +12,7 @@ function Timer([setQuizResultPage]){
 
         if(second == 0){
             clearInterval(interval);
-            setQuizResultPage(true)
+            setQuizResultPage(true);
         };
 
         return () => clearInterval(interval);

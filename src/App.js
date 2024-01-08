@@ -24,7 +24,7 @@ function App() {
       .then(res => res.json())
       .then(res => {
 
-        res.results.forEach((element) => {
+        res.results.map((element) => {
         var randomNumber = Math.floor(Math.random() * 3);
 
           element.options = [...element.incorrect_answers];
