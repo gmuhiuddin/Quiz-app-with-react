@@ -62,7 +62,7 @@ function App() {
           <h2 style={{textAlign:'center', fontSize:'49px',color:'white'}}>General knowledge quiz</h2>
           <div className="heading-div">
             <p className='queNoP'><span>{currentIndexOfQuiz + 1}</span> of <span>{quiz.length}</span></p>
-            <Timer />
+            <Timer setQuizResultPage={setQuizResultPage} />
           </div>
           <hr />
           <QuizContainer isClicked={isClicked} setQuizResultPage={setQuizResultPage} setUserOption={setUserOption} nextQuizFunc={nextQuizFunc} setIsClicked={setIsClicked} isChecked={isChecked} setIsChecked={setIsChecked} quiz={quiz} currentIndexOfQuiz={currentIndexOfQuiz} quizResultPage={quizResultPage} />
