@@ -45,7 +45,9 @@
   padding: 15px;
   background-color: rgb(48, 48, 243);
   border-radius: 15px;
-  width: 39%;
+  width: 100%;
+  max-width: 749px;
+  margin: 0 5px;
 }
 
 .heading-div {
@@ -93,5 +95,5 @@
 }
 
 .btn:disabled{
-  cursor:not-allowed;
+  cursor: not-allowed;
 }

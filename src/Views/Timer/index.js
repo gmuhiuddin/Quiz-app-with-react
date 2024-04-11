@@ -2,21 +2,21 @@ import { useState, useEffect } from 'react';
 import timerImg from '../../output-onlinepngtools.png'
 import './style.css'
 
-function Timer([setQuizResultPage]){
-    const [second, setSecond] = useState(300);
-
+function Timer({setQuizResultPage}){
+    const [second, setSecond] = useState(180);
+    
     useEffect(() => {
-        let interval = setInterval(() => {
-            setSecond(second-1)
+        
+        const interval = setInterval(() => {
+            setSecond(seconds => seconds - 1);
         }, 1000);
-
-        if(second == 0){
-            clearInterval(interval);
-            setQuizResultPage(true);
-        };
-
+        
         return () => clearInterval(interval);
-    })
+    }, []);
+
+    if(second == 0){
+        setQuizResultPage(true);
+    };
  
     return(
         <div className="timer-div">

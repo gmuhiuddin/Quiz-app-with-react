@@ -1,3 +1,4 @@
+
 function QuizContainer({isClicked, setQuizResultPage, nextQuizFunc, setUserOption, setIsClicked, setIsChecked, isChecked, quiz, currentIndexOfQuiz, quizResultPage}){
 
     return(
@@ -12,7 +13,7 @@ function QuizContainer({isClicked, setQuizResultPage, nextQuizFunc, setUserOptio
                   setIsClicked(false)
                   setUserOption(e.target.value)
                 }} name='option' type='radio' id={element} value={element}/>
-                <label className='label' for={element}>{element}</label>
+                <label className='label' htmlFor={element}>{element}</label>
                 <br />
                 <br />
               </span>

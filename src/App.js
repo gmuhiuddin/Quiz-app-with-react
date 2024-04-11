@@ -18,26 +18,28 @@ function App() {
   useEffect(function () {
     getQuestions()
   }, [])
-
+  
   function getQuestions() {
+
     fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple')
       .then(res => res.json())
       .then(res => {
 
-        res.results.map((element) => {
-        var randomNumber = Math.floor(Math.random() * 3);
+        res.results?.forEach((element) => {
 
+          var randomNumber = Math.floor(Math.random() * 3);
+          
           element.options = [...element.incorrect_answers];
 
           element.options.splice(randomNumber, 0, element.correct_answer);
         })
-
-        setQuiz(res.results)
+        
+        res.results && setQuiz(res.results);
       }).catch((err) => {
-        console.log(err)
+        console.log(err);
       })
-  }
-
+  };
+  
   function nextQuizFunc() {
     setIsClicked(true)
     if (userOption == quiz[currentIndexOfQuiz].correct_answer) {
@@ -49,11 +51,11 @@ function App() {
 
   if (!quiz.length) {
     return <Loader />
-  }
+  };
 
   if(quizResultPage){
     return <ResultContainer quiz={quiz} correctQue={correctQue} />
-  }
+  };
 
   return (
     
