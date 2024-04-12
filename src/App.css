@@ -59,14 +59,13 @@
 .queNoP,
 .que-txt,
 .label {
-  font-size: 29px;
+  font-size: 23px;
   color: white;
 }
 
 .input {
   height: 17px;
   width: 17px;
-
 }
 
 .label {
@@ -85,12 +84,12 @@
 
 .btn {
   margin-right: 19px;
-  height: 45px;
-  width: 119px;
+  height: 43px;
+  width: 109px;
   border-radius: 15px;
   border: none;
   outline: none;
-  font-size: 25px;
+  font-size: 23px;
   cursor: pointer;
 }
 
